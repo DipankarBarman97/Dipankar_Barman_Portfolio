@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Work from "./components/Work";
+import Timeline from "./components/Timeline";
+import Services from "./components/Services";
+// import Testimonial from "./components/Testimonial";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
+import HeaderPhone from "./components/HeaderPhone";
 
-function App() {
+const App = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  // console.log(menuOpen);
+  const [ratio, setRatio] = useState(window.innerWidth / window.innerHeight);
+  // console.log(ratio);
+  useEffect(() => {
+    const resizeRatio = () => {
+      setRatio(window.innerWidth / window.innerHeight)
+    }
+    window.addEventListener("resize", resizeRatio)
+    return () => {
+      window.removeEventListener("resize", resizeRatio)
+    }
+  }, [ratio])
+  
+
+  // return ratio < 2 ? (
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Home />
+      {/* <Home ratio={ratio} /> */}
+      <Work />
+      <Timeline />
+      <Services />
+      {/* <Testimonial /> */}
+      <Contact />
+      <Footer />
+      <Toaster />
+    </>
+  )
+  // ) : <em id="customMessage">Please change the ratio to view!</em>
+};
 
 export default App;
