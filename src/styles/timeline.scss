@@ -35,13 +35,13 @@
         text-align: right;
   
         &::after {
-          animation: upanddown 0.5s infinite ease-in alternate;
+          animation: upanddown 0.4s infinite ease-in alternate;
         }
       }
       &:nth-child(even) {
         text-align: left;
         &::after {
-          animation: upanddown 1s infinite ease-in alternate;
+          animation: upanddown 0.8s infinite ease-in alternate;
         }
       }
   

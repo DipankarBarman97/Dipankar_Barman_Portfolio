@@ -6,15 +6,15 @@ import me from "../assets/me.png";
 
 const Home = () => {
 // const Home = ({ ratio }) => {
-  const clientCount = useRef(null);
+  // const clientCount = useRef(null);
   const projectCount = useRef(null);
 
-  const animationClientsCount = () => {
-    animate(0, 0, {
-      duration: 2,
-      onUpdate: (v) => (clientCount.current.textContent = v.toFixed()),
-    });
-  };
+  // const animationClientsCount = () => {
+  //   animate(0, 0, {
+  //     duration: 2,
+  //     onUpdate: (v) => (clientCount.current.textContent = v.toFixed()),
+  //   });
+  // };
   const animationProjectsCount = () => {
     animate(0, 4, {
       duration: 2,
@@ -70,18 +70,18 @@ const Home = () => {
             </a>
           </div>
 
-          <article>
+          {/* <article>
             <p>
-              +
+              + */}
               {/* {ratio < 2 && ( */}
-                <motion.span
+                {/* <motion.span
                   whileInView={animationClientsCount}
                   ref={clientCount}
-                ></motion.span>
+                ></motion.span> */}
               {/* )} */}
-            </p>
+            {/* </p>
             <span>Clients</span>
-          </article>
+          </article> */}
 
           <aside>
             <article>

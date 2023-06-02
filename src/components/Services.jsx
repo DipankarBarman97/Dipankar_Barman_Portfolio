@@ -29,14 +29,14 @@ const Services = () => {
     <div id="services">
       <h2>Services</h2>
       <section>
-        <motion.div
+        {/* <motion.div
           className="serviceBox1"
           whileInView={animations.whileInView}
           initial={animations.one}
         >
           <h3>0+</h3>
           <p>Years of Experience</p>
-        </motion.div>
+        </motion.div> */}
         <motion.div
           className="serviceBox2"
           whileInView={animations.whileInView}
